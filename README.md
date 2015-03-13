@@ -6,18 +6,19 @@ It includes functionality for using koa, handlebars, sass and nodemon if one of 
 First of all you have to install some global modules.
 
 ```
+gem install compass
 npm install -g nodemon bower gulp
-npm install
 
 ```
 If it's done, you only have to run the following two steps, to get your skeleton running.
 
 ```
+npm install
 gulp install
 gulp
 
 ```
-At least you only have to run 
+At least you only have to run gulp.
 
 ```
 gulp
