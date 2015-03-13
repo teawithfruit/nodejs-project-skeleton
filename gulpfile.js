@@ -32,7 +32,7 @@ gulp.task('lint', function () {
     .pipe(jshint())
 });
 
-gulp.task('server', function() {
+gulp.task('server', ['sass', 'lint'], function() {
   nodemon({
     script: 'server.js',
     ext: 'html js hbs css scss json',
