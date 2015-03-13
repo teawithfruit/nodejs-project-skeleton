@@ -1,0 +1,27 @@
+{
+  "name": "nodejs-project-skeleton",
+  "version": "1.0.0",
+  "authors": [
+    "teawithfruit <teawithfruit@gmail.com>"
+  ],
+  "description": "A simple skeleton including koa, handlebars, sass and nodemon.",
+  "main": "server.js",
+  "keywords": [
+    "skeleton",
+    "koa",
+    "handlebars",
+    "sass",
+    "nodemon"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize-css": "~3.0.2"
+  }
+}
