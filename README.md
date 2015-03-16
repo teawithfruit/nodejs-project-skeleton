@@ -10,7 +10,7 @@ gem install compass
 npm install -g nodemon bower gulp
 
 ```
-If it's done, you only have to run the following two steps, to get your skeleton running.
+If it's done, you only have to run the following three steps, to get your skeleton running.
 
 ```
 npm install
