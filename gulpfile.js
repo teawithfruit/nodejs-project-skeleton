@@ -6,6 +6,8 @@ var sass = require('gulp-ruby-sass');
 var fse = require("fs-extra");
 var exec = require('child_process').exec;
 var wiredep = require('wiredep').stream;
+var browserify = require('gulp-browserify');
+var rename = require('gulp-rename');
 
 gulp.task('install', function() {
   gulp.src(['./bower.json']).pipe(install());
@@ -32,7 +34,16 @@ gulp.task('lint', function () {
     .pipe(jshint())
 });
 
-gulp.task('server', ['sass', 'lint'], function() {
+gulp.task('browserify', function() {
+  gulp.src('./react/index.jsx')
+  .pipe(browserify({
+    insertGlobals : true
+  }))
+  .pipe(rename('bundle.js'))
+  .pipe(gulp.dest('./static/script'));
+});
+
+gulp.task('server', ['sass', 'lint', 'browserify'], function() {
   nodemon({
     script: 'server.js',
     ext: 'html js hbs css scss json',
