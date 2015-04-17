@@ -1,0 +1,1 @@
+module.exports.Component = require('./components/Component');
