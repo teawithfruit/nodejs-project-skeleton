@@ -6,47 +6,45 @@ var sass = require('gulp-ruby-sass');
 var fse = require("fs-extra");
 var exec = require('child_process').exec;
 var wiredep = require('wiredep').stream;
-var browserify = require('gulp-browserify');
 var rename = require('gulp-rename');
 
 gulp.task('install', function() {
   gulp.src(['./bower.json']).pipe(install());
-  if(!fse.existsSync('./partials')) fse.mkdirSync('./partials');
+  if(!fse.existsSync('./app/partials')) fse.mkdirSync('./app/partials');
 });
 
 gulp.task('bower', function () {
-  gulp.src('layouts/main.hbs')
+  gulp.src('app/layouts/main.hbs')
     .pipe(wiredep({}))
-    .pipe(gulp.dest('layouts'));
+    .pipe(gulp.dest('app/layouts'));
 });
 
 gulp.task('sass', function() {
-  sass('static/style/style.scss', {
+  sass('app/static/style/style.scss', {
       style   : "compact",
       compass : true,
       trace: false
   })
-  .pipe(gulp.dest('static/style'));
+  .pipe(gulp.dest('app/static/style'));
 });
 
 gulp.task('lint', function () {
-  gulp.src('./**/*.js')
+  gulp.src('./app/**/*.js')
     .pipe(jshint())
 });
 
-gulp.task('browserify', function() {
-  gulp.src('./react/index.jsx')
-  .pipe(browserify({
-    insertGlobals : true
-  }))
-  .pipe(rename('bundle.js'))
-  .pipe(gulp.dest('./static/script'));
+gulp.task('desktop', ['sass', 'lint'], function () {
+
 });
 
-gulp.task('server', ['sass', 'lint', 'browserify'], function() {
+gulp.task('mobile', ['sass', 'lint'], function () {
+
+});
+
+gulp.task('server', ['sass', 'lint'], function() {
   nodemon({
-    script: 'server.js',
-    ext: 'html js hbs css scss json',
+    script: 'app/server.js',
+    ext: 'html js hbs scss json',
     ignore: ['ignored.js'],
     nodeArgs: ['--harmony'] 
   })

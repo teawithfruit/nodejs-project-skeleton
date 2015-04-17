@@ -10,13 +10,15 @@ var fse = require('fs-extra');
 var util = require('util');
 var app = koa();
 
-var Useful = require('./static/script/script');
-var useful = new Useful();
+var lib = require('./lib/');
 
 app.use(bodyParser());
 
 app.use(handlebars({
-  defaultLayout: "main",
+  defaultLayout: "index",
+  layoutsDir: "app/layouts",
+  viewsDir: "app/views",
+  partialsDir: "app/partials",
   helpers: {
     json: function (obj) {
             return JSON.stringify(obj);
