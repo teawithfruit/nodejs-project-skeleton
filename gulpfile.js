@@ -1,3 +1,5 @@
+'use strict';
+
 var gulp = require('gulp');
 var install = require("gulp-install");
 var nodemon = require("gulp-nodemon");
@@ -7,6 +9,7 @@ var fse = require("fs-extra");
 var exec = require('child_process').exec;
 var wiredep = require('wiredep').stream;
 var rename = require('gulp-rename');
+var nwb = require('node-webkit-builder');
 
 gulp.task('install', function() {
   gulp.src(['./bower.json']).pipe(install());

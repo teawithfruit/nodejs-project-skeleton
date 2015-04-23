@@ -1,3 +1,5 @@
+'use strict';
+
 var koa = require('koa');
 var bodyParser = require('koa-body-parser');
 var mount = require('koa-mount');
