@@ -17,8 +17,10 @@ gulp.task('install', function() {
 });
 
 gulp.task('bower', function () {
-  gulp.src('app/layouts/main.hbs')
-    .pipe(wiredep({}))
+  gulp.src('app/layouts/index.hbs')
+    .pipe(wiredep({
+      ignorePath: '..'
+    }))
     .pipe(gulp.dest('app/layouts'));
 });
 

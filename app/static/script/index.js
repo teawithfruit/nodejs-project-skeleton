@@ -1,11 +1,11 @@
 'use strict';
 
-module.exports = function() {
-  return {
+(function(exports) {
 
-    skeleton: function() {
-      return 'Hello World!';
-    }
 
+
+  exports.skeleton = function() {
+    return 'Hello World!';
   };
-}();
+
+})(typeof exports === 'undefined' ? this['module'] = {} : exports);
