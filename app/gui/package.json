@@ -1,0 +1,19 @@
+{
+  "name": "Density",
+  "version": "1.0.0",
+  "main": "index.html",
+  "window": {
+    "title": "Skeleton",
+    "icon": "images/icon.png",
+    "toolbar": true,
+    "frame": true,
+    "width": 600,
+    "height": 400,
+    "position": "center",
+    "resizable": false
+  },
+  "webkit": {
+    "plugin": true
+  },
+  "js-flags": "--harmony"
+}

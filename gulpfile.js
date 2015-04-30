@@ -10,6 +10,9 @@ var exec = require('child_process').exec;
 var wiredep = require('wiredep').stream;
 var rename = require('gulp-rename');
 var nwb = require('node-webkit-builder');
+var gutil = require('gulp-util');
+var browserify = require('gulp-browserify');
+var debowerify = require("debowerify");
 
 gulp.task('install', function() {
   gulp.src(['./bower.json']).pipe(install());
@@ -39,7 +42,37 @@ gulp.task('lint', function () {
 });
 
 gulp.task('desktop', ['sass', 'lint'], function () {
+  gulp.src('./app/lib/index.js')
+    .pipe(browserify({
+      insertGlobals : true
+    }))
+    .pipe(rename('lib.js'))
+    .pipe(gulp.dest('./app/gui'))
 
+  gulp.src('./app/static/script/index.js')
+  .pipe(browserify({
+    transform: ['debowerify']
+  }))
+  .pipe(rename('static.js'))
+  .pipe(gulp.dest('./app/gui'))
+
+  var nw = new nwb({
+      version: 'latest',
+      files: './app/gui/**',
+
+      macPlist: { mac_bundle_id: 'myPkg' },
+      platforms: ['win32', 'win64', 'osx32', 'osx64']
+  });
+
+  // Log stuff you want
+  nw.on('log', function (msg) {
+    gutil.log('node-webkit-builder', msg);
+  });
+
+  // Build returns a promise, return it so the task isn't called in parallel
+  return nw.build().catch(function (err) {
+    gutil.log('node-webkit-builder', err);
+  });
 });
 
 gulp.task('mobile', ['sass', 'lint'], function () {
