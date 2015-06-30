@@ -13,6 +13,7 @@ var nwb = require('node-webkit-builder');
 var gutil = require('gulp-util');
 var browserify = require('gulp-browserify');
 var debowerify = require("debowerify");
+var find = require('all-requires');
 
 gulp.task('install', function() {
   gulp.src(['./bower.json']).pipe(install());
@@ -42,22 +43,24 @@ gulp.task('lint', function () {
 });
 
 gulp.task('desktop', ['sass', 'lint'], function () {
-  gulp.src('./app/lib/index.js')
-    .pipe(browserify({
-      insertGlobals : true
-    }))
-    .pipe(rename('lib.js'))
-    .pipe(gulp.dest('./app/gui'))
 
+  find({ path: './app/lib', onlyLocal: false }, function (err, requires) {
+    requires.forEach(function(module) {
+      fse.copySync('./node_modules/' + module, './app/gui/node_modules/' + module);
+    });
+  });
+
+  fse.copySync('./app/lib/', './app/gui/lib/');
+/*
   gulp.src('./app/static/script/index.js')
   .pipe(browserify({
     transform: ['debowerify']
   }))
   .pipe(rename('static.js'))
   .pipe(gulp.dest('./app/gui'))
-
+*/
   var nw = new nwb({
-      version: 'latest',
+      version: '0.12.2',
       files: './app/gui/**',
 
       macPlist: { mac_bundle_id: 'myPkg' },
@@ -73,6 +76,7 @@ gulp.task('desktop', ['sass', 'lint'], function () {
   return nw.build().catch(function (err) {
     gutil.log('node-webkit-builder', err);
   });
+
 });
 
 gulp.task('mobile', ['sass', 'lint'], function () {

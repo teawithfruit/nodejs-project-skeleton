@@ -4,7 +4,11 @@
   "description": "A simple skeleton including koa, handlebars, sass and nodemon.",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "gulp",
+    "test": "mocha",
+    "app": "nwbuild --run .",
+    "build": "./build/build",
+    "clean": "rm -rf build/cache"
   },
   "keywords": [
     "skeleton",
@@ -16,6 +20,7 @@
   "author": "teawithfruit <teawithfruit@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "all-requires": "^0.1.2",
     "bower": "^1.3.12",
     "fs-extra": "^0.16.5",
     "gulp": "^3.8.11",
@@ -47,12 +52,5 @@
     "mocha": "^2.2.1",
     "node-webkit-builder": "1.0.11",
     "watchify": "^2.1.1"
-  },
-  "scripts": {
-    "start": "gulp",
-    "test": "mocha",
-    "app": "nwbuild --run .",
-    "build": "./build/build",
-    "clean": "rm -rf build/cache"
   }
 }

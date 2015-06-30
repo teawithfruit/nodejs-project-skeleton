@@ -2,8 +2,6 @@
 
 (function(exports) {
 
-
-
   exports.skeleton = function() {
     return 'Hello World!';
   };

@@ -1,11 +1,13 @@
 'use strict';
 
-module.exports = function() {
-  return {
+var Q = require('q');
+var handlebars = require('handlebars');
+var request = require('request');
 
-    skeleton: function() {
-      return 'Hello World!';
-    }
+(function(exports) {
 
+  exports.skeleton = function() {
+    return 'Hello World!';
   };
-}();
+
+})(typeof exports === 'undefined' ? this['module'] = {} : exports);
