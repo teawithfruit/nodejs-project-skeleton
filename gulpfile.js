@@ -51,14 +51,14 @@ gulp.task('desktop', ['sass', 'lint'], function () {
   });
 
   fse.copySync('./app/lib/', './app/gui/lib/');
-/*
+
   gulp.src('./app/static/script/index.js')
   .pipe(browserify({
     transform: ['debowerify']
   }))
   .pipe(rename('static.js'))
   .pipe(gulp.dest('./app/gui'))
-*/
+
   var nw = new nwb({
       version: '0.12.2',
       files: './app/gui/**',
