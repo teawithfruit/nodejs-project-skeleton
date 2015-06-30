@@ -43,6 +43,7 @@ gulp.task('lint', function () {
 });
 
 gulp.task('desktop', ['sass', 'lint'], function () {
+  if(fse.lstatSync('./app/gui/node_modules/').isDirectory()) fse.removeSync('./app/gui/node_modules/');
 
   find({ path: './app/lib', onlyLocal: false }, function (err, requires) {
     requires.forEach(function(module) {
