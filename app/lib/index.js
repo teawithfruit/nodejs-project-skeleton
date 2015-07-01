@@ -1,6 +1,7 @@
 'use strict';
 
 var Q = require('q');
+var async = require('async');
 var handlebars = require('handlebars');
 var request = require('request');
 
