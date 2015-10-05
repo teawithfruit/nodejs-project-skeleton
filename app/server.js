@@ -43,7 +43,6 @@ pub.post('/', function *(next) {
 });
 
 app.use(mount('/static', app.use(serve(__dirname + '/static'))));
-app.use(mount('/bower_components', app.use(serve(__dirname + '/bower_components'))));
 app.use(mount('/', pub.middleware()));
 
 app.listen(8000);
