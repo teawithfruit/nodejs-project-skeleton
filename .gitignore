@@ -9,3 +9,4 @@ cache
 build
 app/gui/static.js
 app/static/style/style.css
+app/static/components
