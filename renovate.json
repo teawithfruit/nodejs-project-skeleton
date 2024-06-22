@@ -8,6 +8,7 @@
   "includePaths": ["package.json"],
   "recreateWhen": "always",
   "semanticCommits": "enabled",
+  "prHourlyLimit": 0,
   "packageRules": [
     {
       "groupName": "deps",
