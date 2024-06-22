@@ -8,13 +8,11 @@
   "includePaths": ["package.json"],
   "packageRules": [
     {
-      "groupName": "ignore",
-      "packagePatterns": ["fs-extra"],
-      "enabled": false
-    },
-    {
       "packagePatterns": ["*"],
+      "excludeDepPatterns": ["fs-extra"],
+      "matchUpdateTypes": ["minor", "patch"],
       "groupName": "deps",
+      "extends": [":semanticCommitTypeAll(chore)"]
       "enabled": true
     }
   ]
