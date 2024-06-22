@@ -13,7 +13,7 @@
     {
       "groupName": "deps",
       "matchUpdateTypes": ["minor", "patch"],
-      "matchPackagePatterns": ["*"],
+      "matchDepPatterns": ["*"],
       "excludeDepPatterns": ["fs-extra"],
       "enabled": true
     }
