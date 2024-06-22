@@ -47,7 +47,7 @@
     "wiredep": "^2.2.2"
   },
   "devDependencies": {
-    "chai": "^2.2.0",
+    "chai": "^5.0.0",
     "co-mocha": "^1.1.0",
     "debowerify": "^1.2.1",
     "mocha": "^2.2.1",
