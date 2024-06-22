@@ -12,6 +12,7 @@
       "excludeDepPatterns": ["fs-extra"],
       "groupName": "deps",
       "semanticCommitType": "chore",
+      "extends": [":semanticCommitTypeAll(chore)"],
       "enabled": true
     }
   ]
