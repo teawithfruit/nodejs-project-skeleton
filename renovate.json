@@ -12,7 +12,6 @@
       "excludeDepPatterns": ["fs-extra"],
       "matchUpdateTypes": ["minor", "patch"],
       "groupName": "deps",
-      "semanticCommitType": "chore",
       "recreateWhen": "always",
       "enabled": true
     }
