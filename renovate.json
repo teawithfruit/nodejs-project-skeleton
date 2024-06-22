@@ -11,6 +11,10 @@
   "prHourlyLimit": 0,
   "packageRules": [
     {
+      "matchDepPatterns": ["fs-extra"],
+      "enabled": false
+    },
+    {
       "groupName": "dependencies",
       "matchUpdateTypes": ["minor", "patch"],
       "enabled": true
