@@ -5,6 +5,7 @@
   "labels": ["dependencies"],
   "timezone": "Europe/Berlin",
   "baseBranches": ["master"],
+  "includePaths": ["package.json"],
   "packageRules": [
     {
       "groupName": "ignore",
@@ -14,7 +15,6 @@
     {
       "packagePatterns": ["*"],
       "groupName": "deps",
-      "automerge": false,
       "enabled": true
     }
   ]
