@@ -50,7 +50,7 @@
     "chai": "^2.2.0",
     "co-mocha": "^1.1.0",
     "debowerify": "^1.2.1",
-    "mocha": "^2.2.1",
+    "mocha": "^10.0.0",
     "nw-builder": "^2.0.2",
     "watchify": "^2.1.1"
   }
