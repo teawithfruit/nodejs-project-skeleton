@@ -33,7 +33,7 @@
     "gulp-rename": "^1.2.2",
     "gulp-ruby-sass": "^1.0.0-alpha.3",
     "gulp-util": "^3.0.4",
-    "handlebars": "^3.0.0",
+    "handlebars": "^4.0.0",
     "koa": "^0.20.0",
     "koa-body-parser": "^1.1.1",
     "koa-handlebars": "^0.5.2",
