@@ -12,7 +12,7 @@
       "excludeDepPatterns": ["fs-extra"],
       "matchUpdateTypes": ["minor", "patch"],
       "groupName": "deps",
-      "extends": [":semanticCommitTypeAll(chore)"],
+      "semanticCommitType": "chore",
       "enabled": true
     }
   ]
