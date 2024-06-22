@@ -7,13 +7,13 @@
   "baseBranches": ["master"],
   "includePaths": ["package.json"],
   "recreateWhen": "always",
+  "semanticCommits": "enabled",
   "packageRules": [
     {
       "groupName": "deps",
       "matchPackagePatterns": ["*"],
       "matchUpdateTypes": ["minor", "patch"],
       "excludeDepPatterns": ["fs-extra"],
-      "extends": [":semanticCommitTypeAll(chore)"],
       "enabled": true
     }
   ]
