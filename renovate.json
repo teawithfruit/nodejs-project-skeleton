@@ -9,9 +9,6 @@
   "recreateWhen": "always",
   "semanticCommits": "enabled",
   "prHourlyLimit": 0,
-  "minor": {
-    "semanticCommitType": "chore"
-  },
   "packageRules": [
     {
       "groupName": "dependencies",
