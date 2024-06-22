@@ -12,7 +12,6 @@
       "excludeDepPatterns": ["fs-extra"],
       "groupName": "deps",
       "semanticCommitType": "chore",
-      "recreateWhen": "always",
       "enabled": true
     }
   ]
