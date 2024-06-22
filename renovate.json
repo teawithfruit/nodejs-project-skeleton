@@ -11,7 +11,7 @@
   "prHourlyLimit": 0,
   "packageRules": [
     {
-      "groupName": "deps",
+      "groupName": "dependencies",
       "matchUpdateTypes": ["minor", "patch"],
       "excludeDepPatterns": ["fs-extra"],
       "extends": [":semanticCommitTypeAll(chore)"],
