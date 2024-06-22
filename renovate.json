@@ -1,6 +1,21 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:recommended"
+  "extends": ["config:recommended", ":disableMajorUpdates"],
+  "enabledManagers": ["npm"],
+  "labels": ["dependencies"],
+  "timezone": "Europe/Berlin",
+  "baseBranches": ["master"],
+  "packageRules": [
+    {
+      "groupName": "ignore",
+      "packagePatterns": ["fs-extra"],
+      "enabled": false
+    },
+    {
+      "packagePatterns": ["*"],
+      "groupName": "deps",
+      "automerge": false,
+      "enabled": true
+    }
   ]
 }
