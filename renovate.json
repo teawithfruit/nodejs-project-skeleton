@@ -13,7 +13,6 @@
     {
       "groupName": "dependencies",
       "matchUpdateTypes": ["minor", "patch"],
-      "excludeDepPatterns": ["fs-extra"],
       "enabled": true
     }
   ]
