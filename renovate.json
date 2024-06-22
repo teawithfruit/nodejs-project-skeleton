@@ -6,12 +6,13 @@
   "timezone": "Europe/Berlin",
   "baseBranches": ["master"],
   "includePaths": ["package.json"],
+  "recreateWhen": "always",
   "packageRules": [
     {
-      "packagePatterns": ["*"],
-      "excludeDepPatterns": ["fs-extra"],
       "groupName": "deps",
-      "semanticCommitType": "chore",
+      "matchPackagePatterns": ["*"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "excludeDepPatterns": ["fs-extra"],
       "extends": [":semanticCommitTypeAll(chore)"],
       "enabled": true
     }
