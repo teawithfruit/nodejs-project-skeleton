@@ -1,6 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:recommended", ":disableMajorUpdates"],
+  "extends": ["config:recommended", ":disableMajorUpdates", ":semanticCommitTypeAll(chore)"],
   "enabledManagers": ["npm"],
   "labels": ["dependencies"],
   "timezone": "Europe/Berlin",
@@ -17,7 +17,6 @@
       "groupName": "dependencies",
       "matchUpdateTypes": ["minor", "patch"],
       "excludeDepPatterns": ["fs-extra"],
-      "extends": [":semanticCommitTypeAll(chore)"],
       "enabled": true
     }
   ]
