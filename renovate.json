@@ -12,7 +12,7 @@
   "packageRules": [
     {
       "groupName": "deps",
-      "matchUpdateTypes": ["major", "minor", "patch"],
+      "matchUpdateTypes": ["minor", "patch"],
       "excludeDepPatterns": ["fs-extra"],
       "enabled": true
     }
